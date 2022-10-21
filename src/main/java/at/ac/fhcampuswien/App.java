@@ -7,20 +7,20 @@ public class App {
 
 
     public static void oneMonthCalendar(int numberDay, int startingDay) {
-        int a = 0;
-        int b = -1;
+        int row = 0;
+        int col = -1;
 
         for (int i = 0; i < numberDay; i++) {
             for (int j = 1; j < startingDay && i == 0; j++) {
                 System.out.print("   ");
-                b++;
+                col++;
             }
-            b++;
-            a++;
-            if (b % 7 == 0) {
+            col++;
+            row++;
+            if (col % 7 == 0) {
                 System.out.println();
             }
-            System.out.printf("%2d ", a);
+            System.out.printf("%2d ", row);
         }
         System.out.println();
     }
@@ -72,15 +72,15 @@ public class App {
 
 
 
-    public static boolean swapArrays(int [] array1, int [] array2){
-        if (array1.length != array2.length) {
+    public static boolean swapArrays(int [] arr1, int [] arr2){
+        if (arr1.length != arr2.length) {
             return false;
         }
 
-        for (int i = 0; i < array1.length; i++){
-            int temporary = array1[i];
-            array1[i] = array2 [i];
-            array2[i] = temporary;
+        for (int i = 0; i < arr1.length; i++){
+            int temporary = arr1[i];
+            arr1[i] = arr2 [i];
+            arr2[i] = temporary;
         }
 
         return true;
@@ -142,18 +142,18 @@ public class App {
         guessingGame(randomNumberBetweenOneAndHundred());
 
         System.out.println("\nTask 4: Swap Arrays");
-        int [] array1 = {1,2,3,4};
-        int [] array2 = {4,3,2,1};
+        int [] arr1 = {1,2,3,4};
+        int [] arr2 = {4,3,2,1};
         System.out.println();
         System.out.println("Before Swap:");
-        System.out.println("Array1 => "+ java.util.Arrays.toString(array1));
-        System.out.println("Array2 => "+ java.util.Arrays.toString(array2));
+        System.out.println("Array1 => "+ java.util.Arrays.toString(arr1));
+        System.out.println("Array2 => "+ java.util.Arrays.toString(arr2));
         System.out.println();
 
-        swapArrays(array1, array2);
+        swapArrays(arr1, arr2);
         System.out.println("After Swap:");
-        System.out.println("Array1 => "+ java.util.Arrays.toString(array1));
-        System.out.println("Array2 => "+ java.util.Arrays.toString(array2));
+        System.out.println("Array1 => "+ java.util.Arrays.toString(arr1));
+        System.out.println("Array2 => "+ java.util.Arrays.toString(arr2));
 
         System.out.println("\nTask 5: CamelCase");
         System.out.println();
